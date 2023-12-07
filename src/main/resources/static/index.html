@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>상품 관리
+        <ul>
+            <li><a href="/servlet/v1/upload">서블릿 파일 업로드1</a></li>
+            <li><a href="/servlet/v2/upload">서블릿 파일 업로드2</a></li>
+            <li><a href="/spring/upload">스프링 파일 업로드</a></li>
+            <li><a href="/items/new">상품 - 파일, 이미지 업로드</a></li>
+        </ul>
+    </li>
+</ul>
+<button onclick="pop();">팝업테스트</button>
+<img id="img" th:src="" width="300" height="300"/>
+</body>
+<script>
+    function pop() {
+        var win = window.open("/pop","","width=700px,height=500px,top=200px,left=200px;");
+    }
+
+    function parentsFun(filename) {
+        alert("click" + filename);
+        console.log("I'm parents" + filename);
+        document.getElementById('img').src = "/images/" + filename;
+    }
+</script>
+</html>
